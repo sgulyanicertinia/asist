@@ -139,6 +139,7 @@ func loadConfigFile(opts *options.Options) (*config.Config, error) {
 
 func loadRules(opts *options.Options, configFile *config.Config) ([]*rules.Rule, error) {
 	standardRuleIds, customRuleIds, ruleIdsErr := ruleset.GetRuleIdsToRun(configFile, opts)
+	//log.Printf("standardRuleIds", standardRuleIds, "customRuleIds", customRuleIds)
 	if ruleIdsErr != nil {
 		return nil, ruleIdsErr
 	}
